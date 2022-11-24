@@ -52,40 +52,53 @@ public class GUI implements ActionListener {
         userText.setBounds(100, 20, 165, 25);
         panel.add(userText);
         
-        JLabel passwordLabel = new JLabel("Password");
+        passwordLabel = new JLabel("password");
         passwordLabel.setBounds(10, 50, 80, 25);
         panel.add(passwordLabel);
         
-        JPasswordField passwordText = new JPasswordField();
+        passwordText = new JPasswordField();
         passwordText.setBounds(100, 50, 165, 25);
         panel.add(passwordText);
         
-        JButton button = new JButton("Login");
+        button = new JButton("Login");
         button.setBounds(10, 80, 80, 25);
         button.addActionListener(new GUI());
         panel.add(button);
         
-        JLabel success = new JLabel("LOGIN SUCCESSFUL");
+        success = new JLabel("");
         success.setBounds(10, 110, 300, 25);
         panel.add(success);
         
-        frame.setVisible(true);
-        
-        
-        
-        
-        
-        
-        
+        frame.setVisible(true);   
         
         
     }
- 
-
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+        String user = userText.getText();
+        String password = passwordText.getText();
+        
+      if(user.equals("Fletcher") && password.equals("Marv3lvsdc")){
+         success.setText("Login successful!"); 
+          JPanel panel = new JPanel();
+        JFrame frame = new JFrame();
+        frame.setSize(350, 200);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+        frame.add(panel);
+        
+        panel.setLayout(null);
+        
+        userLabel = new JLabel("Welcome Fletcher");
+        userLabel.setBounds(40, 50, 110, 55);
+        panel.add(userLabel);
+        
+        
+      }
+      else{
+         success.setText("Login unsuccessful!");
+      }
+            }
     
     
 }
